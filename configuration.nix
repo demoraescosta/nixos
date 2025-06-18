@@ -10,19 +10,19 @@
       ./hardware-configuration.nix
     ];
 
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -111,10 +111,23 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     wget
+    spotify
+    fastfetch
+    lutris
+    obsidian
+    kitty
     gh
   ];
+
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -142,4 +155,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
 }
