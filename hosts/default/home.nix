@@ -28,6 +28,7 @@
             spotify
             fastfetch
             lutris
+            vesktop
             obsidian
             kitty
         ];
