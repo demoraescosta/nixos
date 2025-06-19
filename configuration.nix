@@ -128,7 +128,6 @@
     gh
     wine
     wine64
-    bottles
     electron
     alejandra
   ];
