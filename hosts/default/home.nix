@@ -23,14 +23,13 @@
 # environment.
         home.packages = with pkgs; [
         toybox
-            git
+            gh
             wget
             spotify
             fastfetch
             lutris
             obsidian
             kitty
-            gh
         ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
