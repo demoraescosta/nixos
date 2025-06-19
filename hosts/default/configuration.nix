@@ -118,6 +118,7 @@
     firefox
     nixfmt-rfc-style
     ly
+    htop
   ];
 
   fonts.packages = with pkgs; [
