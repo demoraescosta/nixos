@@ -31,6 +31,8 @@
             vesktop
             obsidian
             kitty
+            ripgrep
+            fzf
         ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
