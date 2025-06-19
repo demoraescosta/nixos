@@ -116,6 +116,7 @@
     gh
     firefox
     nixfmt-rfc-style
+    ly
   ];
 
   fonts.packages = with pkgs; [
