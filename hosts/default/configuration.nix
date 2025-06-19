@@ -138,12 +138,14 @@ in {
     firefox
     spotify
     nixfmt-rfc-style
-    ly
     htop
     
+    ly
     waybar
     dunst
     libnotify
+    swww
+    rofi-wayland
   ];
 
   fonts.packages = with pkgs; [
