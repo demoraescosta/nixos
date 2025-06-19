@@ -122,6 +122,7 @@
     wine64
     bottles
     electron
+    alejandra
   ];
 
   fonts.packages = with pkgs; [
