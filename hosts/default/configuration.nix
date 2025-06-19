@@ -90,10 +90,6 @@
     isNormalUser = true;
     description = "Andre de Moraes Costa";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   home-manager = {
@@ -117,19 +113,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    toybox
-    git
-    wget
-    spotify
-    fastfetch
-    lutris
-    obsidian
-    kitty
-    gh
-    wine
-    wine64
-    electron
-    alejandra
   ];
 
   fonts.packages = with pkgs; [
