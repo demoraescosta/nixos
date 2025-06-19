@@ -139,6 +139,7 @@ in {
     spotify
     nixfmt-rfc-style
     htop
+    inotify-tools
     
     ly
     waybar
