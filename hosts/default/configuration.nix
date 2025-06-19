@@ -116,6 +116,7 @@
     git 
     gh
     firefox
+    spotify
     nixfmt-rfc-style
     ly
     htop
