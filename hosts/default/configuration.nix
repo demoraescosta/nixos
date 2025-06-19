@@ -51,7 +51,8 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.enable = true;
+  services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -100,8 +101,8 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "andre";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "andre";
 
   # Install firefox.
   programs.firefox.enable = true;
