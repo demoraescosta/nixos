@@ -25,7 +25,7 @@
         toybox
             gh
             wget
-            spotify
+            spotifyd
             fastfetch
             lutris
             vesktop
