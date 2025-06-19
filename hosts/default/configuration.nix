@@ -2,9 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
-
-{
+{ config, pkgs, inputs, ... }: let
+    pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -46,6 +46,14 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  # fix framdedrops on hyprland because of mesa version mismatch
+  hardware.graphics = {
+    package = pkgs-unstable.mesa;
+
+    enable32Bit = true;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa;
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -60,7 +68,12 @@
     };
   };
 
-  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -127,6 +140,10 @@
     nixfmt-rfc-style
     ly
     htop
+    
+    waybar
+    dunst
+    libnotify
   ];
 
   fonts.packages = with pkgs; [
