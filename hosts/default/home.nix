@@ -28,6 +28,7 @@
             fastfetch
             lutris
             vesktop
+            discord
             obsidian
             kitty
             ripgrep
