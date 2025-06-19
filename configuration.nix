@@ -96,6 +96,13 @@
     ];
   };
 
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs; };
+  #   users = {
+  #     "andre" = import ./home.nix;
+  #   };
+  # };
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "andre";
