@@ -113,12 +113,12 @@ in {
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "andre" = import ./home.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs; };
+  #   users = {
+  #     "andre" = import /home.nix;
+  #   };
+  # };
 
   # Enable automatic login for the user.
   # services.displayManager.autoLogin.enable = true;
