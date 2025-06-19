@@ -140,6 +140,7 @@ in {
     spotify
     nixfmt-rfc-style
     htop
+    busybox
     inotify-tools
     
     ly
