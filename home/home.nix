@@ -39,6 +39,7 @@
             btop
             gamescope
             qutebrowser
+            imagemagick
         ];
 
     environment.variables = {
