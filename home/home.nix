@@ -39,6 +39,7 @@
             gamescope
             imagemagick
             qbittorrent
+            neovim
         ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -48,6 +49,10 @@
 # # the Nix store. Activating the configuration will then make '~/.screenrc' a
 # # symlink to the Nix store copy.
 # ".screenrc".source = dotfiles/screenrc;
+    # "./config/hypr/hyprland.conf" = {
+    #     source = config.lib.file.mkOutOfStoreSymLink /home/andre/nixos/home/dotfiles/hypr/ 
+    #     recursive = true;
+    # };
       
 # # You can also set the file content immediately.
 # ".gradle/gradle.properties".text = ''
