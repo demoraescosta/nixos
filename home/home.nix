@@ -37,8 +37,8 @@
             tmux
             btop
             gamescope
-            qutebrowser
             imagemagick
+            nwg-look
         ];
 
     environment.variables = {
