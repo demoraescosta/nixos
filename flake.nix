@@ -19,8 +19,6 @@
             specialArgs = {inherit inputs;};
             modules = [
                 ./nixos/configuration.nix
-                # inputs.home-manager.nixosModules.default
-                # ./home/home.nix
                 home-manager.nixosModules.home-manager
                 {
                     home-manager.useGlobalPkgs = true;
@@ -32,13 +30,5 @@
                 }
               ];
         };
-
-        # homeConfigurations = {
-        #   "andre@nixos" = home-manager.lib.homeManagerConfiguration {
-        #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        #     extraSpecialArgs = {inherit inputs outputs;};
-        #     modules = [./home/home.nix];
-        # };
       };
-    # };
 }
