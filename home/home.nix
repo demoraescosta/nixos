@@ -38,7 +38,6 @@
             btop
             gamescope
             imagemagick
-            qutebrowser
             qbittorrent
         ];
 
