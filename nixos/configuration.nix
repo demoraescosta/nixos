@@ -169,6 +169,12 @@ in {
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+  
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
       extraPkgs = pkgs: with pkgs; [
@@ -185,6 +191,7 @@ in {
       ];
     };
   };
+
   programs.gamemode.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
