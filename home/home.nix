@@ -45,6 +45,7 @@
         EDITOR = "vim";
         VISUAL = "vim";
         HYPRSHOT_DIR = "~/screenshots"
+        TERMINAL = "kitty"
     };
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
