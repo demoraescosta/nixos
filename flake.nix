@@ -20,7 +20,15 @@
             modules = [
                 ./nixos/configuration.nix
                 inputs.home-manager.nixosModules.default
-            ];
+                # {
+                #     home-manager.useGlobalPkgs = true;
+                #     home-manager.useUserPackages = true;
+                #     home-manager.extraSpecialArgs = specialArgs;
+                #     home-manager.users.andre.imports = [
+                #         ./home/home.nix
+                #     ];
+                # }
+              ];
         };
 
         homeConfigurations = {
