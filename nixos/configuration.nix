@@ -140,6 +140,8 @@ in {
     nixfmt-rfc-style
     htop
     busybox
+    pipx
+    python313Packages.pip
     inotify-tools
     
     ly
