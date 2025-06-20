@@ -143,6 +143,7 @@ in {
     pipx
     python313Packages.pip
     inotify-tools
+    imagemagick
     
     ly
     waybar
