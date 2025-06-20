@@ -151,7 +151,7 @@ in {
     dunst
     libnotify
     swww
-    wofi
+    rofi-wayland
   ];
 
   fonts.packages = with pkgs; [
