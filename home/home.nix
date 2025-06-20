@@ -75,8 +75,8 @@
     home.sessionVariables = {
         EDITOR = "vim";
         VISUAL = "vim";
-        HYPRSHOT_DIR = "~/screenshots"
-        TERMINAL = "kitty"
+        HYPRSHOT_DIR = "~/screenshots";
+        TERMINAL = "kitty";
     };
 
 # Let Home Manager install and manage itself.
