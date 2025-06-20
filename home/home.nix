@@ -41,13 +41,6 @@
             qutebrowser
         ];
 
-    environment.variables = {
-        EDITOR = "vim";
-        VISUAL = "vim";
-        HYPRSHOT_DIR = "~/screenshots"
-        TERMINAL = "kitty"
-    };
-
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
     home.file = {
@@ -80,7 +73,10 @@
 #  /etc/profiles/per-user/andre/etc/profile.d/hm-session-vars.sh
 #
     home.sessionVariables = {
-# EDITOR = "emacs";
+        EDITOR = "vim";
+        VISUAL = "vim";
+        HYPRSHOT_DIR = "~/screenshots"
+        TERMINAL = "kitty"
     };
 
 # Let Home Manager install and manage itself.
