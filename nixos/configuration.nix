@@ -25,6 +25,9 @@ in {
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
   # Enable networking
   networking.networkmanager.enable = true;
 
