@@ -163,6 +163,7 @@ in {
     inotify-tools
     nwg-look
     imagemagick
+    nix-ld
 
     wineWowPackages.stable
     winetricks
