@@ -91,6 +91,7 @@
         VISUAL = "vim";
         HYPRSHOT_DIR = "~/screenshots";
         TERMINAL = "kitty";
+        TERM = "kitty";
     };
 
 # Let Home Manager install and manage itself.
