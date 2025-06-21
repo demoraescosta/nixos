@@ -217,6 +217,7 @@ in {
     VISUAL = "vim";
     HYPRSHOT_DIR = "~/screenshots";
     TERMINAL = "kitty";
+    TERM = "kitty";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
