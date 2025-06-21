@@ -45,7 +45,6 @@
         obsidian
         ripgrep
         fzf
-        kdePackages.dolphin
         hyprshot
         tmux
         btop
