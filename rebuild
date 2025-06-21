@@ -4,11 +4,11 @@ set -o pipefail
 
 pushd ~/nixos/
 
-if git diff --quiet '*.nix'; then
-    echo "No changes detected"
-    popd
-    exit 0
-fi
+# if git diff --quiet '*.nix'; then
+#     echo "No changes detected"
+#     popd
+#     exit 0
+# fi
 
 git diff -U0 '*.nix'
 
