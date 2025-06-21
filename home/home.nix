@@ -60,8 +60,9 @@
     #     source = config.lib.file.mkOutOfStoreSymLink /home/andre/nixos/home/dotfiles/hypr/ 
     #     recursive = true;
     # };
-    ".config/rofi/config.rasi" = { 
-        source = dotfiles/rofi/config.rasi;
+    ".config/rofi/" = { 
+        recursive = true;
+        source = dotfiles/rofi;
     };
       
 # # You can also set the file content immediately.
