@@ -146,6 +146,7 @@ in {
     nwg-look
     imagemagick
 
+    winetricks
     protontricks
    
     hyprlock
