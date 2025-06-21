@@ -213,6 +213,13 @@ in {
   programs.gamemode.enable = true;
   programs.nix-ld.enable = true;
 
+  environment.sessionVariables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+    HYPRSHOT_DIR = "~/screenshots";
+    TERMINAL = "kitty";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
