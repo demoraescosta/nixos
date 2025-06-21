@@ -46,6 +46,7 @@
             bluetui
             dolphin-emu
             prismlauncher
+
         ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -59,6 +60,9 @@
     #     source = config.lib.file.mkOutOfStoreSymLink /home/andre/nixos/home/dotfiles/hypr/ 
     #     recursive = true;
     # };
+    ".config/rofi/config.rasi" = { 
+        source = dotfiles/rofi/config.rasi;
+    };
       
 # # You can also set the file content immediately.
 # ".gradle/gradle.properties".text = ''

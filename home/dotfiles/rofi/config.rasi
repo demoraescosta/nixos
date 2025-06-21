@@ -1,0 +1,7 @@
+
+@theme "gruvbox-light"
+
+entry, element-text {
+  text-color: red;
+  background-color: #000000;
+}

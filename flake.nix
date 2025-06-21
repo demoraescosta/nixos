@@ -27,6 +27,7 @@
                     home-manager.users.andre.imports = [
                         ./home/home.nix
                     ];
+                    home-manager.backupFileExtension = "bak";
                 }
               ];
         };
