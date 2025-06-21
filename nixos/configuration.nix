@@ -145,6 +145,8 @@ in {
     inotify-tools
     nwg-look
     imagemagick
+
+    protontricks
    
     hyprlock
     hypridle
