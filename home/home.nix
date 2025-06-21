@@ -19,57 +19,52 @@
 # release notes.
     home.stateVersion = "25.05"; # Please read the comment before changing.
 
+    home.packages = [
+        (pkgs.buildEnv { 
+            name = "scripts";
+            paths = [
+                ./scripts;
+            ];
+        })
+    ];
+
 # The home.packages option allows you to install Nix packages into your
 # environment.
-        home.packages = with pkgs; [
-            gh
-            wget
-            fastfetch
-            lutris
-            vesktop
-            discord
-            obsidian
-            kitty
-            ripgrep
-            fzf
-            kdePackages.dolphin
-            hyprshot
-            tmux
-            btop
-            gamescope
-            imagemagick
-            qbittorrent
-            neovim
-            whatsie
-            mangohud
-            yazi
-            bluetui
-            dolphin-emu
-            prismlauncher
+    home.packages = with pkgs; [
+        gh
+        wget
+        fastfetch
+        lutris
+        vesktop
+        discord
+        obsidian
+        kitty
+        ripgrep
+        fzf
+        kdePackages.dolphin
+        hyprshot
+        tmux
+        btop
+        gamescope
+        imagemagick
+        qbittorrent
+        neovim
+        whatsie
+        mangohud
+        yazi
+        bluetui
+        dolphin-emu
+        prismlauncher
 
-        ];
+    ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
     home.file = {
-# # Building this configuration will create a copy of 'dotfiles/screenrc' in
-# # the Nix store. Activating the configuration will then make '~/.screenrc' a
-# # symlink to the Nix store copy.
-# ".screenrc".source = dotfiles/screenrc;
-    # "./config/hypr/hyprland.conf" = {
-    #     source = config.lib.file.mkOutOfStoreSymLink /home/andre/nixos/home/dotfiles/hypr/ 
-    #     recursive = true;
-    # };
-    ".config/rofi/" = { 
-        recursive = true;
-        source = dotfiles/rofi;
-    };
-      
-# # You can also set the file content immediately.
-# ".gradle/gradle.properties".text = ''
-#   org.gradle.console=verbose
-#   org.gradle.daemon.idletimeout=3600000
-# '';
+        ".config/rofi/" = { 
+            recursive = true;
+            source = dotfiles/rofi;
+        };
     };
 
 # Home Manager can also manage your environment variables through
