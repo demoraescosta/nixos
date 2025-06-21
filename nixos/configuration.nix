@@ -146,6 +146,7 @@ in {
     nwg-look
     imagemagick
 
+    wineWowPackages.stable
     winetricks
     protontricks
    
