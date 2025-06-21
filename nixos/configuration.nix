@@ -222,6 +222,12 @@ in {
     TERM = "kitty";
   };
 
+  xdg.mime.defaultApplications = {
+    "x-scheme-handler/terminal" = "kitty.desktop";
+    "application/pdf" = "firefox.desktop";
+    "inode/directory" = "yazi.desktop";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
