@@ -20,6 +20,16 @@ in {
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # enable GCC to USB adapter overclocking
+  boot.extraModulePackages = [ 
+    config.boot.kernelPackages.gcadapter-oc-kmod
+  ];
+
+  # to autoload at boot:
+  boot.kernelModules = [ 
+    "gcadapter_oc"
+  ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -27,6 +37,8 @@ in {
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  # services.blueman.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -89,6 +101,9 @@ in {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # enable gamecube controllers 
+  services.udev.packages = [ pkgs.dolphin-emu ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
