@@ -37,14 +37,12 @@
                 ./scripts 
             ]; 
         })
-        gh
         wget
         fastfetch
         lutris
         vesktop
         discord
         obsidian
-        kitty
         ripgrep
         fzf
         kdePackages.dolphin

@@ -152,6 +152,7 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git 
+    kitty
     gh
     firefox
     spotify
@@ -161,8 +162,6 @@ in {
     pipx
     python313Packages.pip
     inotify-tools
-    nwg-look
-    imagemagick
 
     wineWowPackages.stable
     winetricks
