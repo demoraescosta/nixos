@@ -145,7 +145,11 @@ in {
     inotify-tools
     nwg-look
     imagemagick
-    
+   
+    hyprlock
+    hypridle
+    hyprsunset
+
     ly
     waybar
     dunst
