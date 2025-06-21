@@ -177,6 +177,8 @@ in {
     libnotify
     swww
     rofi-wayland
+
+    xdg-desktop-portal-termfilechooser
   ];
 
   fonts.packages = with pkgs; [
