@@ -181,6 +181,7 @@ in {
     rofi-wayland
 
     xdg-desktop-portal-termfilechooser
+    playerctl
   ];
 
   fonts.packages = with pkgs; [
