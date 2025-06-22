@@ -163,6 +163,7 @@ in {
     pipx
     python313Packages.pip
     inotify-tools
+    busybox
 
     wineWowPackages.stable
     winetricks
