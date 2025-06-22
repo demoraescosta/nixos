@@ -60,6 +60,7 @@
         prismlauncher
         heroic
         kdePackages.dolphin
+        nwg-look
     ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
