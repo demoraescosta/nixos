@@ -1,15 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }: let
-    pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -21,19 +25,19 @@ in {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # enable GCC to USB adapter overclocking
-  boot.extraModulePackages = [ 
+  boot.extraModulePackages = [
     config.boot.kernelPackages.gcadapter-oc-kmod
   ];
 
   # to autoload at boot:
-  boot.kernelModules = [ 
+  boot.kernelModules = [
     "gcadapter_oc"
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -72,7 +76,7 @@ in {
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
 
   # Enable the KDE Plasma Desktop Environment.
   # services.displayManager.sddm.enable = true;
@@ -103,8 +107,8 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # enable gamecube controllers 
-  services.udev.packages = [ pkgs.dolphin-emu ];
+  # enable gamecube controllers
+  services.udev.packages = [pkgs.dolphin-emu];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -129,7 +133,7 @@ in {
   users.users.andre = {
     isNormalUser = true;
     description = "Andre de Moraes Costa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   # home-manager = {
@@ -152,7 +156,7 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git 
+    git
     kitty
     gh
     firefox
@@ -168,7 +172,7 @@ in {
     wineWowPackages.stable
     winetricks
     protontricks
-   
+
     hyprlock
     hypridle
     hyprsunset
@@ -204,13 +208,14 @@ in {
     enable = true;
     capSysNice = true;
   };
-  
+
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        libkrb5
-        keyutils
-      ];
+      extraPkgs = pkgs:
+        with pkgs; [
+          libkrb5
+          keyutils
+        ];
     };
   };
 
@@ -245,8 +250,8 @@ in {
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 57621 ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking.firewall.allowedTCPPorts = [57621];
+  networking.firewall.allowedUDPPorts = [5353];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -269,5 +274,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }
