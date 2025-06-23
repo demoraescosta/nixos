@@ -4,6 +4,9 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         hyprland.url = "github:hyprwm/Hyprland";
+        alejandra.url = "github:kamadorueda/alejandra/4.0.0";
+        alejandra.inputs.nixpkgs.follows = "nixpkgs";
+        # lidm.url = "github:javalsai/lidm"
 
         home-manager = {
             url = "github:nix-community/home-manager";
@@ -11,14 +14,20 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-    let 
+    outputs = { 
+        self, 
+        nixpkgs, 
+        home-manager, 
+        alejandra, 
+        ... 
+    }
+    @inputs: let 
       inherit (self) outputs;
     in {
-        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
           specialArgs = {inherit inputs;};
+          system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -28,6 +37,12 @@
                   ./home/home.nix
               ];
             }
+
+            {
+              environment.systemPackages = [alejandra.defaultPackage.${system}];
+            }
+
+            ./nixos/configuration.nix
           ];
         };
       };
