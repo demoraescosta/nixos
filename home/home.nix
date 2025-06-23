@@ -93,7 +93,7 @@
     home.sessionVariables = {
         EDITOR = "vim";
         VISUAL = "vim";
-        HYPRSHOT_DIR = "~/screenshots";
+        HYPRSHOT_DIR = "screenshots";
         TERMINAL = "kitty";
         TERM = "kitty";
     };
