@@ -10,56 +10,6 @@ pushd ~/nixos/
 #     exit 0
 # fi
 
-git fetch origin
-LOCAL=$(git rev-parse @)
-REMOTE=$(git rev-parse @{u})
-BASE=$(git merge-base @ @{u})
-
-if [ $LOCAL = $REMOTE ]; then
-    echo "Up-to-date"
-elif [ $LOCAL = $BASE ]; then
-    operation="pull"
-    echo "Need to pull. Run 'git pull' to update."
-
-    echo "Options:"
-    echo "1) Pull from GitHub"
-    echo "2) Continue without $operation"
-    echo "3) Exit script"
-    read -p "Select an option: " option
-elif [ $REMOTE = $BASE ]; then
-    echo "Diverged"
-    operation="manual merge"
-
-    echo "Options:"
-    echo "1) Pull from GitHub"
-    echo "2) Continue without $operation"
-    echo "3) Exit script"
-    read -p "Select an option: " option
-fi
-
-if [ -n "$option" ]; then
-    case $option in
-        1)
-            if [ "$operation" = "pull" ]; then
-                git pull
-            else
-                echo "Manual merge needed."
-            fi
-            ;;
-        2) 
-            echo "Continuing without $operation..."
-            ;;
-        3)
-            echo "Exiting script."
-            exit 0
-            ;;
-        *)
-            echo "Invalid option. Exiting."
-            exit 1
-            ;;
-    esac
-fi
-
 git diff -U0 '*.nix'
 
 echo "Rebuilding..."
