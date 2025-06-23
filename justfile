@@ -1,6 +1,6 @@
 
 format:
-	alejandra . 
+	alejandra . 1> /dev/null
 
 rebuild: format
 	./rebuild
@@ -10,6 +10,5 @@ update: format
 	./rebuild
 
 commit: format
-	current=$(nixos-rebuild list-generations | grep True)
-	printf "Curent generation: %s\n" "$current"
-	git commit -am "$current"
+	printf "Curent generation: %s\n" $(nixos-rebuild list-generations | grep True)  
+	git commit -am '$(nixos-rebuild list-generations | grep True)'
