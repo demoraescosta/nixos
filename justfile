@@ -10,5 +10,5 @@ update: format
 	./rebuild
 
 commit: format
-	printf "Curent generation: %s\n" $(nixos-rebuild list-generations | grep True)  
-	git commit -am '$(nixos-rebuild list-generations | grep True)'
+    ./commit
+    

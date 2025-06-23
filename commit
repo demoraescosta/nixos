@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+current=$(nixos-rebuild list-generations | grep True)
+printf "Curent generation: %s\n" "$current"
+git commit -am "$current"
+
