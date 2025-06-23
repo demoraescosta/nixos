@@ -4,7 +4,6 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         hyprland.url = "github:hyprwm/Hyprland";
-        ssbm.url = "github:djanatyn/ssbm-nix";
 
         home-manager = {
             url = "github:nix-community/home-manager";
@@ -16,10 +15,6 @@
     let 
       inherit (self) outputs;
     in {
-        ssbm.slippi-launcher= {
-          enable = true;
-        };
-
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [

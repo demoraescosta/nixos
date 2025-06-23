@@ -61,6 +61,8 @@
         heroic
         kdePackages.dolphin
         nwg-look
+        rustup
+        vlc
     ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
