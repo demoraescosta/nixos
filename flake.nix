@@ -6,7 +6,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
     alejandra.url = "github:kamadorueda/alejandra/4.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
-    # lidm.url = "github:javalsai/lidm"
 
     home-manager = {
       url = "github:nix-community/home-manager";
