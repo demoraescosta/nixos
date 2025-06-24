@@ -77,14 +77,14 @@ in {
   services.xserver.excludePackages = [pkgs.xterm];
 
   # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   # services.displayManager.ly.enable = true;
-  services.displayManager.ly = {
-    enable = true;
-    settings = {
-      tty = 9;
-    };
-  };
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   settings = {
+  #     tty = 9;
+  #   };
+  # };
 
   # services.desktopManager.plasma6.enable = true;
   programs.hyprland = {

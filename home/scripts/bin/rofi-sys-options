@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+options="suspend\nlock\nexit\nreboot\nshutdown"
+selected=$(echo -e $options | rofi -dmenu -i -selected-row 1 -p "system options")
+
+if [[ "$selected" = "" ]]; then
+    exit
+elif [[ "$selected" = "suspend" ]]; then
+    echo "suspending..."
+    systemctl suspend
+elif [[ "$selected" = "reboot" ]]; then
+    echo "rebooting..."
+    shutdown now -r
+elif [[ "$selected" = "shutdown" ]]; then
+    shutdown now
+else 
+    rofi -e "system option unimplemented!"
+    exit
+fi;

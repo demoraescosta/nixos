@@ -24,12 +24,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (pkgs.buildEnv {
-      name = "my-scripts";
-      paths = [
-        ./scripts
-      ];
-    })
     wget
     fastfetch
     lutris
@@ -57,33 +51,35 @@
     rustup
     vlc
     clipse
+    dsda-doom
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # ".config/rofi/" = {
-    #   recursive = true;
-    #   source = dotfiles/rofi;
-    # };
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      v = "vim";
+      nixv = "cd ~/nixos; vim";
+      nix-update = "cd ~/nixos; just rebuild";
+      nix-upgrade = "cd ~/nixos; just commit update commit";
+    };
+
+    history.size = 10000;
+    history.ignoreAllDups = true;
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
+  home.file = {
+    "bin/" = {
+      source = ./scripts/bin;
+      recursive = true;
+    };
+  };
+  home.sessionPath = ["/home/andre/bin"];
+
   #  /etc/profiles/per-user/andre/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     EDITOR = "vim";
     VISUAL = "vim";
