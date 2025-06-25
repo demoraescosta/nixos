@@ -1,13 +1,13 @@
 
 format:
-	alejandra . 1> /dev/null
+    alejandra . 1> /dev/null
 
 rebuild: format
-	./rebuild
+    ./rebuild
 
 update: format
-	nix flake update
-	./rebuild
+    nix flake update
+    sudo ./rebuild
 
 commit: format
     ./commit
