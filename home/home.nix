@@ -45,6 +45,9 @@
     clipse
     dsda-doom
     solaar
+    nethack
+    cowsay
+    rmpc
   ];
 
   home.file = {
