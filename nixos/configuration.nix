@@ -189,6 +189,7 @@ in {
 
     xdg-desktop-portal-termfilechooser
     playerctl
+    openrgb-with-all-plugins
   ];
 
   fonts.packages = with pkgs; [
@@ -196,6 +197,8 @@ in {
     fairfax
     fira-code
   ];
+
+  services.hardware.openrgb.enable = true;
 
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;

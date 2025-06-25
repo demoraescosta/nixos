@@ -52,6 +52,7 @@
     vlc
     clipse
     dsda-doom
+    solaar
   ];
 
   programs.zsh = {
