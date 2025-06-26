@@ -108,9 +108,9 @@ in {
   # enable gamecube controllers
   services.udev.packages = [pkgs.dolphin-emu];
 
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -228,10 +228,12 @@ in {
   programs.gamemode.enable = true;
   programs.nix-ld.enable = true;
 
+  systemd.services.mpd.environment = {
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.andre.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
   environment.sessionVariables = {
     EDITOR = "vim";
     VISUAL = "vim";
-    HYPRSHOT_DIR = "screenshots";
     TERMINAL = "kitty";
     TERM = "kitty";
   };
