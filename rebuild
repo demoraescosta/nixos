@@ -14,8 +14,6 @@ git diff -U0 '*.nix'
 
 echo "Rebuilding..."
 
-alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
-
 sudo nixos-rebuild switch --flake .#nixos | tee nixos-switch.log
 
 # current=$(nixos-rebuild list-generations | grep True)

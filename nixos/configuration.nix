@@ -192,11 +192,29 @@ in {
     openrgb-with-all-plugins
   ];
 
-  fonts.packages = with pkgs; [
-    dina-font
-    fairfax
-    fira-code
-  ];
+  fonts = {
+    packages = let
+      apple = inputs.apple-fonts.packages.${pkgs.system};
+    in
+      with pkgs; [
+        dina-font
+        fairfax
+        fira-code
+        apple.sf-pro
+        apple.sf-mono
+      ];
+
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [
+          "Noto Sans"
+        ];
+        monospace = [
+          "Fira Code"
+        ];
+      };
+    };
+  };
 
   services.hardware.openrgb.enable = true;
 

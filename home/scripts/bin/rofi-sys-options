@@ -13,6 +13,8 @@ elif [[ "$selected" = "reboot" ]]; then
     shutdown now -r
 elif [[ "$selected" = "shutdown" ]]; then
     shutdown now
+elif [[ "$selected" = "exit" ]]; then
+    hyprctl dispatch exit 1
 else 
     rofi -e "system option unimplemented!"
     exit

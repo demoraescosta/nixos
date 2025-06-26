@@ -2,7 +2,7 @@
 format:
     alejandra . 1> /dev/null
 
-rebuild: format
+rebuild:
     ./rebuild
 
 update: format

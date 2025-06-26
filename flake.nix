@@ -6,6 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     alejandra.url = "github:kamadorueda/alejandra/4.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,6 +19,7 @@
     nixpkgs,
     home-manager,
     alejandra,
+    apple-fonts,
     ...
   } @ inputs: let
     inherit (self) outputs;
