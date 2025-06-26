@@ -63,6 +63,11 @@ in {
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+  };
+
   # fix framdedrops on hyprland because of mesa version mismatch
   hardware.graphics = {
     package = pkgs-unstable.mesa;
@@ -131,7 +136,7 @@ in {
   users.users.andre = {
     isNormalUser = true;
     description = "Andre de Moraes Costa";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
     shell = pkgs.zsh;
   };
 
@@ -186,6 +191,7 @@ in {
     libnotify
     swww
     rofi-wayland
+    unrar
 
     xdg-desktop-portal-termfilechooser
     playerctl
@@ -200,6 +206,9 @@ in {
         dina-font
         fairfax
         fira-code
+        roboto
+        nasin-nanpa
+
         apple.sf-pro
         apple.sf-mono
       ];

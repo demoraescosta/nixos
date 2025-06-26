@@ -63,7 +63,7 @@
     mpc
     grim
     slurp
-    fbida
+    timg
     wl-clipboard
   ];
 
