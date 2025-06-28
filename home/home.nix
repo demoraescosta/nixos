@@ -28,43 +28,38 @@
   };
 
   home.packages = with pkgs; [
-    wget
-    fastfetch
-    lutris
-    vesktop
-    discord
-    obsidian
-    ripgrep
-    fzf
-    tmux
-    btop
-    gamescope
-    imagemagick
-    qbittorrent
-    neovim
-    whatsie
-    mangohud
-    yazi
-    bluetui
-    dolphin-emu
-    prismlauncher
-    heroic
-    kdePackages.dolphin
-    nwg-look
-    rustup
-    vlc
-    clipse
-    dsda-doom
-    solaar
-    nethack
-    cowsay
-    rmpc
-    ncmpcpp
-    mpc
-    grim
-    slurp
-    timg
+    # Utilities
+    wget yazi file fzf ripgrep p7zip-rar clipse btop tmux bluetui fd zoxide eza bat unrar dust
+
+    # Less useful utilities
+    neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles
+
+    gitui
+
+    # Wayland
     wl-clipboard
+
+    # Fun Stuff
+    cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
+
+    # Gaming
+    lutris dsda-doom gamescope mangohud mangohud 
+    nethack dolphin-emu prismlauncher heroic
+
+    # Messaging
+    vesktop discord wasistlos whatsie
+
+    # Note taking
+    obsidian
+
+    # Video
+    vlc
+
+    # Music
+    rmpc ncmpcpp mpc
+
+    # Imaging
+    gimp grim slurp timg imagemagick
   ];
 
   home.file = {

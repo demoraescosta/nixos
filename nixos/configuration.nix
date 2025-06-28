@@ -170,20 +170,13 @@ in {
     firefox
     spotify
     nixfmt-rfc-style
-    htop
-    busybox
     pipx
     python313Packages.pip
     inotify-tools
-    busybox
 
     wineWowPackages.stable
     winetricks
     protontricks
-
-    hyprlock
-    hypridle
-    hyprsunset
 
     ly
     waybar
@@ -191,7 +184,6 @@ in {
     libnotify
     swww
     rofi-wayland
-    unrar
 
     xdg-desktop-portal-termfilechooser
     playerctl

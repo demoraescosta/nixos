@@ -5,8 +5,12 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -la";
+      ls = "exa";
+      ll = "exa -la";
       v = "vim";
+      y = "yazi";
+      cat = "bat";
+
       nixv = "cd ~/nixos; vim";
       nix-update = "cd ~/nixos; just rebuild";
       nix-upgrade = "cd ~/nixos; just commit; just update commit";
@@ -21,9 +25,12 @@
         "git"
         "fzf"
       ];
-      theme = "robbyrussell";
+      theme = "simple";
     };
+
     initContent = ''
+      eval "$(zoxide init zsh)"
+
       # Load version control information
       autoload -Uz vcs_info
       precmd() { vcs_info }
