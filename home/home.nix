@@ -27,14 +27,21 @@
     '';
   };
 
+  nixpkgs.overlays = [
+    ( final: prev:  {
+        yazi = prev.yazi.override {
+            _7zz = pkgs._7zz-rar;
+        };
+    })
+  ];
+
   home.packages = with pkgs; [
     # Utilities
-    wget yazi file fzf ripgrep p7zip-rar clipse btop tmux bluetui fd zoxide eza bat unrar dust
+    wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust
+    _7zz-rar
 
     # Less useful utilities
-    neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles
-
-    gitui
+    neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles gitui libreoffice-qt6-fresh
 
     # Wayland
     wl-clipboard
@@ -43,8 +50,7 @@
     cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
 
     # Gaming
-    lutris dsda-doom gamescope mangohud mangohud 
-    nethack dolphin-emu prismlauncher heroic
+    lutris dsda-doom gamescope mangohud mangohud nethack dolphin-emu prismlauncher heroic
 
     # Messaging
     vesktop discord wasistlos whatsie
@@ -61,6 +67,11 @@
     # Imaging
     gimp grim slurp timg imagemagick
   ];
+
+
+  programs.yazi = {
+    enable = true;
+  };
 
   home.file = {
     "bin/" = {

@@ -8,7 +8,6 @@
       ls = "exa";
       ll = "exa -la";
       v = "vim";
-      y = "yazi";
       cat = "bat";
 
       nixv = "cd ~/nixos; vim";
@@ -29,6 +28,14 @@
     };
 
     initContent = ''
+      function y() {
+            local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+            yazi "$@" --cwd-file="$tmp"
+            IFS= read -r -d ''' cwd < "$tmp"
+            [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+            rm -f -- "$tmp"
+      }
+
       eval "$(zoxide init zsh)"
 
       # Load version control information

@@ -1,7 +1,0 @@
-
-@theme "gruvbox-dark"
-
-entry, element-text {
-  text-color: #eeeeee;
-  background-color: #000000;
-}

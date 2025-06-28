@@ -5,10 +5,10 @@ format:
 rebuild:
     ./rebuild
 
-update: format
+update:
     nix flake update
     sudo ./rebuild
 
-commit: format
+commit:
     ./commit
     
