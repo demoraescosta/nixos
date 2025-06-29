@@ -6,8 +6,8 @@ rebuild:
     ./rebuild
 
 update:
-    nix flake update
-    sudo ./rebuild
+    sudo nix flake update
+    ./rebuild
 
 commit:
     ./commit
