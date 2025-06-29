@@ -5,14 +5,16 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ls = "exa";
-      ll = "exa -la";
+      ls = "exa --group-directories-first";
+      l = "exa -l --sort=extension";
+      ll = "exa -la --sort=extension";
       v = "vim";
       cat = "bat";
+      wttr = "curl wttr.in/rio";
 
       nixv = "cd ~/nixos; vim";
-      nix-update = "cd ~/nixos; just rebuild";
-      nix-upgrade = "cd ~/nixos; just commit; just update commit";
+      nixrb = "sudo nixos-rebuild switch";
+      nixrbu = "sudo nixos-rebuild switch --upgrade";
     };
 
     history.size = 10000;

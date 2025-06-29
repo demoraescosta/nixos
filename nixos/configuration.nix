@@ -81,15 +81,9 @@ in {
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  # services.displayManager.ly.enable = true;
-  # services.displayManager.ly = {
-  #   enable = true;
-  #   settings = {
-  #     tty = 9;
-  #   };
-  # };
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "andre";
 
   # services.desktopManager.plasma6.enable = true;
   programs.hyprland = {
@@ -149,9 +143,12 @@ in {
   #   };
   # };
 
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
+  };
+
   # Enable automatic login for the user.
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "andre";
 
   # Install firefox.
   programs.firefox.enable = true;

@@ -21,4 +21,10 @@
       };
     };
   };
+
+  xdg.mimeApps = {
+    defaultApplications = {
+      "inode/desktop" = "yazi.desktop";
+    };
+  };
 }

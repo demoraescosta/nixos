@@ -6,7 +6,7 @@
   imports = [
     ./zsh.nix
     ./yazi.nix
-    ./gtk.nix
+    ./themes.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -37,7 +37,7 @@
     neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles gitui libreoffice-qt6-fresh
 
     # Wayland
-    wl-clipboard
+    wl-clipboard wttrbar
 
     # Fun Stuff
     cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
