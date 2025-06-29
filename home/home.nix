@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./zsh.nix
+    ./yazi.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -26,14 +27,6 @@
       }
     '';
   };
-
-  nixpkgs.overlays = [
-    ( final: prev:  {
-        yazi = prev.yazi.override {
-            _7zz = pkgs._7zz-rar;
-        };
-    })
-  ];
 
   home.packages = with pkgs; [
     # Utilities
@@ -67,11 +60,6 @@
     # Imaging
     gimp grim slurp timg imagemagick
   ];
-
-
-  programs.yazi = {
-    enable = true;
-  };
 
   home.file = {
     "bin/" = {
