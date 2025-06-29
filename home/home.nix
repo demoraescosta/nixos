@@ -6,6 +6,7 @@
   imports = [
     ./zsh.nix
     ./yazi.nix
+    ./gtk.nix
   ];
   nixpkgs.config = {
     allowUnfree = true;
@@ -31,7 +32,6 @@
   home.packages = with pkgs; [
     # Utilities
     wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust
-    _7zz-rar
 
     # Less useful utilities
     neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles gitui libreoffice-qt6-fresh
