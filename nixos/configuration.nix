@@ -12,6 +12,7 @@ in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./nh.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -203,6 +204,12 @@ in {
       ];
 
     fontconfig = {
+      antialias = true;
+      subpixel.rgba = "none";
+      cache32Bit = true;
+      hinting.enable = true;
+      hinting.autohint = true;
+
       defaultFonts = {
         sansSerif = [
           "Noto Sans"
