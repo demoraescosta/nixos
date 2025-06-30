@@ -31,7 +31,10 @@
 
   home.packages = with pkgs; [
     # Utilities
-    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust
+    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust libguestfs
+
+    # Editors
+    helix emacs kakoune
 
     # Less useful utilities
     neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles gitui libreoffice-qt6-fresh
@@ -59,6 +62,9 @@
 
     # Imaging
     gimp grim slurp timg imagemagick
+
+    # Other Software
+    alacritty
   ];
 
   home.file = {

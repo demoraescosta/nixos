@@ -93,6 +93,11 @@ in {
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "andre" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+  
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "br";
@@ -223,8 +228,14 @@ in {
 
   services.hardware.openrgb.enable = true;
 
-  programs.vim.enable = true;
-  programs.vim.defaultEditor = true;
+  # programs.vim.enable = true;
+  # programs.vim.defaultEditor = true;
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+    # package = pkgs.vim-full;
+  };
 
   programs.steam = {
     enable = true;
