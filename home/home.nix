@@ -31,7 +31,7 @@
 
   home.packages = with pkgs; [
     # Utilities
-    wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust
+    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust
 
     # Less useful utilities
     neocities kdePackages.dolphin nwg-look solaar qbittorrent limo zenity bottles gitui libreoffice-qt6-fresh
