@@ -31,7 +31,7 @@
 
   home.packages = with pkgs; [
     # Utilities
-    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust libguestfs
+    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust libguestfs alacritty
 
     # Editors
     helix emacs kakoune
@@ -41,9 +41,6 @@
 
     # Wayland
     wl-clipboard wttrbar
-
-    # Fun Stuff
-    cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
 
     # Gaming
     lutris dsda-doom gamescope mangohud mangohud nethack dolphin-emu prismlauncher heroic
@@ -64,7 +61,10 @@
     gimp grim slurp timg imagemagick
 
     # Other Software
-    alacritty
+    cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
+
+    # Browsers
+    librewolf qutebrowser
   ];
 
   home.file = {
