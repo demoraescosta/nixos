@@ -67,6 +67,7 @@ in {
   i18n.inputMethod = {
     enable = true;
     type = "ibus";
+
   };
 
   # fix framdedrops on hyprland because of mesa version mismatch
