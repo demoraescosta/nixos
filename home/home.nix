@@ -31,7 +31,8 @@
 
   home.packages = with pkgs; [
     # Utilities
-    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust libguestfs alacritty
+    util-linux killall wget file fzf ripgrep clipse btop tmux bluetui fd zoxide eza bat unrar dust libguestfs alacritty stow
+    flatpak # REMOVE THIS LATER!!!!!!
 
     # Editors
     helix emacs kakoune
@@ -58,13 +59,13 @@
     rmpc ncmpcpp mpc
 
     # Images
-    gimp grim slurp timg imagemagick
+    gimp grim slurp timg imagemagick 
 
     # Other Software
-    cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent
+    cowsay fastfetch wiki-tui fortune cmatrix asciiquarium-transparent 
 
     # Browsers
-    librewolf qutebrowser 
+    qutebrowser 
   ];
 
   home.file = {

@@ -143,6 +143,8 @@ in {
 
   programs.zsh.enable = true;
 
+  services.flatpak.enable = true;
+
   # home-manager = {
   #   extraSpecialArgs = { inherit inputs; };
   #   users = {
